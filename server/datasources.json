@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "PostgresConnection": {
+    "host": "localhost",
+    "port": 5432,
+    "url": "postgres://postgres@localhost/tentara_pelajar",
+    "database": "tentara_pelajar",
+    "password": "",
+    "name": "PostgresConnection",
+    "user": "postgres",
+    "connector": "postgresql"
+  }
+}

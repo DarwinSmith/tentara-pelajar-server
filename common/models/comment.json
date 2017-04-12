@@ -1,0 +1,26 @@
+{
+  "name": "comment",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "profileId": {
+      "type": "number",
+      "required": true
+    },
+    "postId": {
+      "type": "number",
+      "required": true
+    },
+    "content": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

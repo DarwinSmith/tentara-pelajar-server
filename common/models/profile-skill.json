@@ -1,0 +1,26 @@
+{
+  "name": "profile_skill",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "profileId": {
+      "type": "number",
+      "required": true
+    },
+    "skillId": {
+      "type": "number",
+      "required": true
+    },
+    "friendId": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

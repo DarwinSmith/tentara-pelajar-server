@@ -1,0 +1,22 @@
+{
+  "name": "personality_endorsements",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "friendId": {
+      "type": "number",
+      "required": true
+    },
+    "personalitiesId": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
