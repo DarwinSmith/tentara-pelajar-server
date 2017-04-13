@@ -1,0 +1,36 @@
+{
+  "name": "profile_skill",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "profileId": {
+      "type": "number",
+      "required": true
+    },
+    "skillId": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "mixins": {
+     "TimeStamp" : true
+  },
+  "validations": [],
+  "relations": {
+    "profile": {
+      "type": "belongsTo",
+      "model": "profile",
+      "foreignKey": "profileId"
+    },
+    "skill": {
+      "type": "belongsTo",
+      "model": "skill",
+      "foreignKey": "skillId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

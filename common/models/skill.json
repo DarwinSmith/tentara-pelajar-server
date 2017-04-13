@@ -1,0 +1,32 @@
+{
+  "name": "skill",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "mixins": {
+     "TimeStamp" : true
+  },
+  "validations": [],
+  "relations": {
+    "profiles": {
+      "type": "hasMany",
+      "model": "profile",
+      "foreignKey": "skillId",
+      "through": "profile_skill"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

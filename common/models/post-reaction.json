@@ -1,0 +1,29 @@
+{
+  "name": "post_reaction",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "postId": {
+      "type": "number",
+      "required": true
+    },
+    "reactionId": {
+      "type": "number",
+      "required": true
+    },
+    "friendId": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "mixins": {
+     "TimeStamp" : true
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

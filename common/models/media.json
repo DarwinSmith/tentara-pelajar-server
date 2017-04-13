@@ -1,0 +1,25 @@
+{
+  "name": "media",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "postId": {
+      "type": "number",
+      "required": true
+    },
+    "directory": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "mixins": {
+     "TimeStamp" : true
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

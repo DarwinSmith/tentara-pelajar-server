@@ -1,0 +1,87 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../node_modules/loopback-ds-timestamp-mixin",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "profile": {
+    "dataSource": "PostgresConnection",
+    "public": true
+  },
+  "profile_skill": {
+    "dataSource": "PostgresConnection",
+    "public": true
+  },
+  "skill": {
+    "dataSource": "PostgresConnection",
+    "public": true
+  },
+  "recomendation": {
+    "dataSource": "PostgresConnection",
+    "public": true
+  },
+  "school": {
+    "dataSource": "PostgresConnection",
+    "public": true
+  },
+  "media": {
+    "dataSource": "PostgresConnection",
+    "public": true
+  },
+  "post": {
+    "dataSource": "PostgresConnection",
+    "public": true
+  },
+  "post_reaction": {
+    "dataSource": "PostgresConnection",
+    "public": true
+  },
+  "reaction": {
+    "dataSource": "PostgresConnection",
+    "public": true
+  },
+  "comment": {
+    "dataSource": "PostgresConnection",
+    "public": true
+  },
+  "personalities": {
+    "dataSource": "PostgresConnection",
+    "public": true
+  },
+  "personality_endorsements": {
+    "dataSource": "PostgresConnection",
+    "public": true
+  }
+}

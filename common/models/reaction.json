@@ -1,0 +1,29 @@
+{
+  "name": "reaction",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "profileId": {
+      "type": "number",
+      "required": true
+    },
+    "postId": {
+      "type": "number",
+      "required": true
+    },
+    "emoji": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "mixins": {
+     "TimeStamp" : true
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

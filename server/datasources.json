@@ -1,0 +1,24 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "PostgresConnection": {
+    "host": "localhost",
+    "port": 5432,
+    "url": "postgres://postgres@localhost/tentara_pelajar",
+    "database": "tentara_pelajar",
+    "password": "",
+    "name": "PostgresConnection",
+    "user": "postgres",
+    "connector": "postgresql"
+  },
+  "neo4j": {
+    "port": 7474,
+    "username": "neo4j",
+    "password": "1234",
+    "name": "neo4j",
+    "connector": "neo4j-graph",
+    "hostname": "127.0.0.1"
+    }
+}
