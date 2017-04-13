@@ -12,5 +12,13 @@
     "name": "PostgresConnection",
     "user": "postgres",
     "connector": "postgresql"
-  }
+  },
+  "neo4j": {
+    "port": 7474,
+    "username": "neo4j",
+    "password": "1234",
+    "name": "neo4j",
+    "connector": "neo4j-graph",
+    "hostname": "127.0.0.1"
+    }
 }

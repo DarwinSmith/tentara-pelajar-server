@@ -27,8 +27,18 @@
       "type": "string"
     }
   },
+  "mixins": {
+     "TimeStamp" : true
+  },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "skills": {
+      "type": "hasMany",
+      "model": "skill",
+      "foreignKey": "profileId",
+      "through": "profile_skill"
+    }
+  },
   "acls": [],
   "methods": {}
 }

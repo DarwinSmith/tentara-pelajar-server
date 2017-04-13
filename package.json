@@ -18,9 +18,12 @@
     "loopback": "^3.0.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^4.0.0",
+    "loopback-connector-neo4j-graph": "^1.0.7",
     "loopback-connector-postgresql": "^2.8.0",
+    "loopback-ds-timestamp-mixin": "^3.4.1",
     "mocha": "^3.2.0",
     "serve-favicon": "^2.0.1",
+    "sinon": "^2.1.0",
     "strong-error-handler": "^2.0.0",
     "supertest": "^3.0.0"
   },
