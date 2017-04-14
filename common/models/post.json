@@ -5,6 +5,13 @@
   "options": {
     "validateUpsert": true
   },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    }
+  },
   "properties": {
     "profileId": {
       "type": "number",
@@ -15,11 +22,24 @@
       "required": true
     }
   },
-  "mixins": {
-     "TimeStamp" : true
-  },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "profile": {
+      "type": "belongsTo",
+      "model": "profile",
+      "foreignKey": "profileId"
+    },
+    "comments": {
+      "type": "hasMany",
+      "model": "comment",
+      "foreignKey": ""
+    },
+    "reactions": {
+      "type": "hasMany",
+      "model": "reaction",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

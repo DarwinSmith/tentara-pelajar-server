@@ -5,6 +5,13 @@
   "options": {
     "validateUpsert": true
   },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    }
+  },
   "properties": {
     "name": {
       "type": "string",
@@ -20,9 +27,6 @@
     "grade": {
       "type": "string"
     }
-  },
-  "mixins": {
-     "TimeStamp" : true
   },
   "validations": [],
   "relations": {},

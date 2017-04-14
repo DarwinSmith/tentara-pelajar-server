@@ -5,6 +5,13 @@
   "options": {
     "validateUpsert": true
   },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    }
+  },
   "properties": {
     "profileId": {
       "type": "number",
@@ -18,9 +25,6 @@
       "type": "string",
       "required": true
     }
-  },
-  "mixins": {
-     "TimeStamp" : true
   },
   "validations": [],
   "relations": {},

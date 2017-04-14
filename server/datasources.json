@@ -20,5 +20,5 @@
     "name": "neo4j",
     "connector": "neo4j-graph",
     "hostname": "127.0.0.1"
-    }
+  }
 }

@@ -5,6 +5,13 @@
   "options": {
     "validateUpsert": true
   },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    }
+  },
   "properties": {
     "profileId": {
       "type": "number",
@@ -19,11 +26,14 @@
       "required": true
     }
   },
-  "mixins": {
-     "TimeStamp" : true
-  },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "post": {
+      "type": "belongsTo",
+      "model": "post",
+      "foreignKey": "postId"
+    }
+  },
   "acls": [],
   "methods": {}
 }

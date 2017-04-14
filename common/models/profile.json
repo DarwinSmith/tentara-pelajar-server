@@ -5,6 +5,13 @@
   "options": {
     "validateUpsert": true
   },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    }
+  },
   "properties": {
     "userId": {
       "type": "string",
@@ -27,9 +34,6 @@
       "type": "string"
     }
   },
-  "mixins": {
-     "TimeStamp" : true
-  },
   "validations": [],
   "relations": {
     "skills": {
@@ -37,6 +41,11 @@
       "model": "skill",
       "foreignKey": "profileId",
       "through": "profile_skill"
+    },
+    "posts": {
+      "type": "hasMany",
+      "model": "post",
+      "foreignKey": ""
     }
   },
   "acls": [],
