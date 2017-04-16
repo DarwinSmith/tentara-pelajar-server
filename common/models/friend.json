@@ -1,0 +1,33 @@
+{
+  "name": "friend",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "profileId": {
+      "type": "number",
+      "required": true
+    },
+    "friendId": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "profile": {
+      "type": "belongsTo",
+      "model": "profile",
+      "foreignKey": "profileId"
+    },
+    "friend": {
+      "type": "belongsTo",
+      "model": "profile",
+      "foreignKey": "friendId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

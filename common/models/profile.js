@@ -2,6 +2,17 @@
 
 module.exports = function (Profile) {
   var app = require('../../server/server')
+  
+  // Profile.afterRemote('create', (ctx, user, next) => {
+  //   let Media = app.models.media
+  //   Media.create({
+  //     postId: 1,
+  //     directory: user.fullname
+  //   }, (err, res) => {
+  //   })
+  //   next()
+  // })
+
   Profile.remoteMethod('addSkillToProfile', {
     accepts: [
       {arg: 'id', type: 'number', required: true},

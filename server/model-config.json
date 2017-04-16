@@ -83,5 +83,17 @@
   "personality_endorsements": {
     "dataSource": "PostgresConnection",
     "public": true
+  },
+  "notification": {
+    "dataSource": "PostgresConnection",
+    "public": true
+  },
+  "friend_request": {
+    "dataSource": "PostgresConnection",
+    "public": true
+  },
+  "friend": {
+    "dataSource": "PostgresConnection",
+    "public": true
   }
 }

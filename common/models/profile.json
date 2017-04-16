@@ -46,6 +46,23 @@
       "type": "hasMany",
       "model": "post",
       "foreignKey": ""
+    },
+    "notifications": {
+      "type": "hasMany",
+      "model": "notification",
+      "foreignKey": ""
+    },
+    "friends": {
+      "type": "hasMany",
+      "model": "friend",
+      "foreignKey": "friendId",
+      "through": "friend"
+    },
+    "friends2": {
+      "type": "hasMany",
+      "model": "friend",
+      "foreignKey": "profileId",
+      "through": "friend"
     }
   },
   "acls": [],
