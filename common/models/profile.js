@@ -48,7 +48,7 @@ module.exports = function(Profile) {
           }
         })
           .then(friends => {
-
+            friends.push(profile)
             let friendsIds = friends.map(friend => friend.id)
             app.models.post.find({
               where: {
