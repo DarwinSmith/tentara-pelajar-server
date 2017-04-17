@@ -11,15 +11,16 @@ module.exports = function (Friendrequest) {
     })
     next()
   })
-
-  Friendrequest.afterRemote('update', (ctr, FR, next) => {
-    if (FR.status === true) {
+  Friendrequest.beforeRemote('**', (ctx, nuusedvar, next) => {
+    let FR = ctx.args.data
+    if (ctx.method.name === 'replaceById') {
       let Notification = app.models.notification
       let Friend = app.models.friend
       Notification.create({
         verb: `User ${FR.friendId} has accepted your friend request`,
         object: 'Friend Approval',
-        userId: FR.profileId
+        userId: FR.profileId,
+        profileId: FR.friendId
       })
       Friend.create({
         profileId: FR.profileId,
@@ -35,3 +36,4 @@ module.exports = function (Friendrequest) {
     }
   })
 }
+
