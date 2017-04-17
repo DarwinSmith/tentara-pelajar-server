@@ -21,6 +21,7 @@ module.exports = function(Profile) {
     http: {path: '/:id/skills/:skillId', verb: 'post'},
     returns: {arg: 'skills', type: 'Object'},
   });
+
   Profile.addSkillToProfile = function(id, skillId, cb) {
     Profile.findById(id, function(err, profile) {
       app.models.skill.findById(skillId, function(err, skill) {
@@ -30,6 +31,43 @@ module.exports = function(Profile) {
       });
     })
   };
+
+  Profile.remoteMethod('getTimelines', {
+    accepts: {arg: 'id', type: 'number', required: true},
+    http: {path: '/:id/timelines', verb: 'get'},
+    returns: {arg: 'timelines', type: 'Array'},
+  });
+
+  Profile.getTimelines = function(id, cb) {
+    Profile.findById(id)
+      .then(profile => {
+
+        profile.friends({
+          fields: {
+            id: true
+          }
+        })
+          .then(friends => {
+
+            let friendsIds = friends.map(friend => friend.id)
+            app.models.post.find({
+              where: {
+                profileId: {inq: friendsIds}
+              },
+              order: 'updatedAt DESC'
+            })
+              .then(posts => {
+                cb(null, posts)
+              })
+              .catch(err => console.error(err))
+
+          })
+          .catch(err => console.error(err))
+      })
+      .catch(err => console.error(err))
+  };
+
+
   //
   // Profile.getProfilesFromId = function (id, cb) {
   //   Profile.findOne({where: {id: id}}, function (err, profile) {
