@@ -7,8 +7,11 @@ module.exports = function (Comment) {
     let Post = app.models.post
     let Notification = app.models.notification
     Post.findById(comment.postId, (err, post) => {
+      if(post === null) {
+        return next()
+      }
       if (comment.profileId === post.profileId) {
-        next()
+        return next()
       }
       else {
         if (err) console.log(err)

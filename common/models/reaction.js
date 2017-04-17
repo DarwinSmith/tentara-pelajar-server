@@ -6,8 +6,11 @@ module.exports = function(Reaction) {
     let Post = app.models.post
     let Notification = app.models.notification
     Post.findById(reaction.postId, (err, post) => {
+      if (post === null) {
+        return next()
+      }
       if (reaction.profileId === post.profileId) {
-        next()
+        return next()
       }
       else {
         if (err) console.log(err)
