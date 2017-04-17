@@ -63,6 +63,11 @@
       "model": "friend",
       "foreignKey": "profileId",
       "through": "friend"
+    },
+    "personalities": {
+      "type": "hasMany",
+      "model": "personalities",
+      "foreignKey": ""
     }
   },
   "acls": [],
