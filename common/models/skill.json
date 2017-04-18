@@ -27,8 +27,8 @@
     "profiles": {
       "type": "hasMany",
       "model": "profile",
-      "foreignKey": "skillId",
-      "through": "profile_skill"
+      "foreignKey": "",
+      "through": "skill_endorsement"
     }
   },
   "acls": [],

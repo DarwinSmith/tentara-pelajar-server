@@ -1,37 +1,30 @@
 {
-  "name": "personality_endorsements",
+  "name": "skill_endorsement",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
-  },
-  "mixins": {
-    "TimeStamp": {
-      "required": false,
-      "validateUpsert": true,
-      "silenceWarnings": false
-    }
   },
   "properties": {
     "friendId": {
       "type": "number",
       "required": true
     },
-    "personalitiesId": {
+    "skillId": {
       "type": "number",
       "required": true
     }
   },
   "validations": [],
   "relations": {
+    "skill": {
+      "type": "belongsTo",
+      "model": "skill",
+      "foreignKey": ""
+    },
     "profile": {
       "type": "belongsTo",
       "model": "profile",
-      "foreignKey": ""
-    },
-    "personalities": {
-      "type": "belongsTo",
-      "model": "personalities",
       "foreignKey": ""
     }
   },
