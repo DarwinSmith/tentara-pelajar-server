@@ -51,7 +51,7 @@ describe('Profile endpoint : ', () => {
     api.get('/profiles')
     .end((err, res) => {
       if (err) done(err)
-      let resProfile = res.body[res.body.length]
+      let resProfile = res.body[res.body.length - 1]
 
       api.post('/profiles/' + resProfile.id)
       .expect('Content-Type', /json/)
@@ -67,6 +67,7 @@ describe('Profile endpoint : ', () => {
       .send(newProfile)
       .end((err, res) => {
         if (err) return done(err)
+        console.log(res)
         let resProfile = res.body
         expect(resProfile.fullname).to.be.equal(newProfile.fullname)
         expect(resProfile.phone).to.be.equal(newProfile.phone)
@@ -82,7 +83,7 @@ describe('Profile endpoint : ', () => {
     api.get('/profiles')
     .end((err, res) => {
       if (err) done(err)
-      let resProfile = res.body[res.body.length]
+      let resProfile = res.body[res.body.length - 1]
 
       api.delete('/profiles/' + resProfile.id)
       .expect(200)

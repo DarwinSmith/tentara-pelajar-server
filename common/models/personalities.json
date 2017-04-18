@@ -29,6 +29,11 @@
       "model": "profile",
       "foreignKey": "",
       "through": "personality_endorsements"
+    },
+    "profile": {
+      "type": "belongsTo",
+      "model": "profile",
+      "foreignKey": "profileId"
     }
   },
   "acls": [],

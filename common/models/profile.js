@@ -32,6 +32,29 @@ module.exports = function(Profile) {
     })
   };
 
+  Profile.remoteMethod('searchFriendQuery', {
+    accepts: {arg: 'name', type: 'string', required: true},
+    http: {path: '/search-friend/:name', verb: 'get'},
+    returns: {arg: 'friendSearch', type: 'Array'}
+  })
+
+  Profile.searchFriendQuery = (name, cb) => {
+    Profile.find({
+      where: {
+        fullname: {
+          regexp: `/${name}/i`
+        }
+      }, limit: 5
+    })
+    .then(profiles => {
+      console.log(profiles);
+      cb(null, profiles)
+    })
+    .catch(err => {
+      cb(err, null)
+    })
+  }
+
   Profile.remoteMethod('getTimelines', {
     accepts: {arg: 'id', type: 'number', required: true},
     http: {path: '/:id/timelines', verb: 'get'},
@@ -48,7 +71,7 @@ module.exports = function(Profile) {
           }
         })
           .then(friends => {
-
+            friends.push(profile)
             let friendsIds = friends.map(friend => friend.id)
             app.models.post.find({
               where: {
