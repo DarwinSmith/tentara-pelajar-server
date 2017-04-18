@@ -8,6 +8,7 @@
   "scripts": {
     "lint": "eslint .",
     "start": "node .",
+    "test": "mocha",
     "posttest": "npm run lint && nsp check"
   },
   "dependencies": {
@@ -31,6 +32,7 @@
   "devDependencies": {
     "eslint": "^3.17.1",
     "eslint-config-loopback": "^8.0.0",
+    "mocha": "^3.2.0",
     "nsp": "^2.1.0"
   },
   "repository": {

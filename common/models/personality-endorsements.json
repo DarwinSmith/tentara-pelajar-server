@@ -23,7 +23,18 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "profile": {
+      "type": "belongsTo",
+      "model": "profile",
+      "foreignKey": ""
+    },
+    "personalities": {
+      "type": "belongsTo",
+      "model": "personalities",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

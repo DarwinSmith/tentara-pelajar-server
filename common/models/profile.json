@@ -58,6 +58,12 @@
       "foreignKey": "profileId",
       "through": "friend"
     },
+    "personality_endorsements": {
+      "type": "hasMany",
+      "model": "personalities",
+      "foreignKey": "",
+      "through": "personality_endorsements"
+    },
     "personalities": {
       "type": "hasMany",
       "model": "personalities",
