@@ -3,16 +3,6 @@
 module.exports = function(Profile) {
   var app = require('../../server/server');
 
-  // Profile.afterRemote('create', (ctx, user, next) => {
-  //   let Media = app.models.media
-  //   Media.create({
-  //     postId: 1,
-  //     directory: user.fullname
-  //   }, (err, res) => {
-  //   })
-  //   next()
-  // })
-
   Profile.remoteMethod('addSkillToProfile', {
     accepts: [
       {arg: 'id', type: 'number', required: true},
@@ -90,18 +80,24 @@ module.exports = function(Profile) {
           .catch(err => console.error(err))
       })
       .catch(err => console.error(err))
-  };
+  }
 
+ Profile.remoteMethod('getProfileContacts', {
+   accepts: {arg: 'id', type: 'number', required: true},
+   http: {path: '/:id/contacts', verb: 'get'},
+   returns: {arg: 'contacts', type: 'Array'},
+ })
 
-  //
-  // Profile.getProfilesFromId = function (id, cb) {
-  //   Profile.findOne({where: {id: id}}, function (err, profile) {
-  //     Profile.app.models.Skill.find({}, (err, skills) => {
-  //       cb(null, skills)
-  //     })
-  //     // profile.skills({}, function (err, skills) {
-  //     //   cb(null, skills)
-  //     // })
-  //   })
-  // }
-};
+ Profile.getProfileContacts = (id, cb) => {
+   Profile.findById(id)
+     .then(profile => {
+       profile.friends({})
+         .then(friends => {
+           cb(null, friends)
+         })
+         .catch(err => console.error(err.message))
+
+     })
+     .catch(err => console.error(err.message))
+ }
+}
