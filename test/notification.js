@@ -73,7 +73,7 @@ describe('Notification endpoint : ', () => {
     api.get('/notifications')
     .end((err, res) => {
       if (err) done(err)
-      let resNotification = res.body[res.body.length]
+      let resNotification = res.body[res.body.length - 1]
 
       api.delete('/notifications/' + resNotification.id)
       .expect(200)

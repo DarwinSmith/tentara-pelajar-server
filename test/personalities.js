@@ -68,7 +68,7 @@ describe('Personalities endpoint : ', () => {
     api.get('/personalities')
     .end((err, res) => {
       if (err) done(err)
-      let resPersonality = res.body[res.body.length]
+      let resPersonality = res.body[res.body.length - 1]
 
       api.delete('/personalities/' + resPersonality.id)
       .expect(200)
