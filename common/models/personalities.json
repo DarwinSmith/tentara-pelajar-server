@@ -23,7 +23,14 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "personality_endorsements": {
+      "type": "hasMany",
+      "model": "profile",
+      "foreignKey": "",
+      "through": "personality_endorsements"
+    }
+  },
   "acls": [],
   "methods": {}
 }
