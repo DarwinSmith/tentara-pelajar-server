@@ -50,12 +50,9 @@ describe('Post-reaction endpoint : ', () => {
       .expect('Content-Type', /json/)
       .expect(200)
       let newPost_reaction = {
-        userId: 'FirebaseUUID',
-        schoolId: 1,
-        fullname: 'Andrea J',
-        phone: '0889969934345',
-        experience: 'Bermain',
-        activity: 'Berenang'
+        postId: 1,
+        reactionId: 2,
+        friendId: 2
       }
       .send(newPost_reaction)
       .end((err, res) => {
@@ -76,6 +73,7 @@ describe('Post-reaction endpoint : ', () => {
     api.get('/post_reactions')
     .end((err, res) => {
       if (err) done(err)
+
       let resPost_reaction = res.body[res.body.length - 1]
 
       api.delete('/post_reactions/' + resPost_reaction.id)
