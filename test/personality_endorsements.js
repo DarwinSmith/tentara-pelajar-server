@@ -5,7 +5,8 @@ const api = supertest('http://localhost:3000/api')
 describe('Personality Endorsement endpoint : ', () => {
   let personality_endorsement = {
     friendId: 1,
-    personalitiesId: 1
+    personalitiesId: 1,
+    profileId: 2
   }
 
   // Create personality_endorsements
@@ -48,7 +49,8 @@ describe('Personality Endorsement endpoint : ', () => {
 
       let newPersonality_endorsement = {
         friendId: 1,
-        personalitiesId: 1
+        personalitiesId: 2,
+        profileId: 3
       }
       .send(newPersonality_endorsement)
       .end((err, res) => {
