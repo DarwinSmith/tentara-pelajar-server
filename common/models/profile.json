@@ -62,6 +62,12 @@
       "type": "hasMany",
       "model": "personalities",
       "foreignKey": ""
+    },
+    "skill_endorsements": {
+      "type": "hasMany",
+      "model": "skill",
+      "foreignKey": "",
+      "through": "skill_endorsement"
     }
   },
   "acls": [],

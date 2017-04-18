@@ -95,5 +95,9 @@
   "friend": {
     "dataSource": "PostgresConnection",
     "public": true
+  },
+  "skill_endorsement": {
+    "dataSource": "PostgresConnection",
+    "public": true
   }
 }

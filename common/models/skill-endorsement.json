@@ -1,0 +1,33 @@
+{
+  "name": "skill_endorsement",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "friendId": {
+      "type": "number",
+      "required": true
+    },
+    "skillId": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "skill": {
+      "type": "belongsTo",
+      "model": "skill",
+      "foreignKey": ""
+    },
+    "profile": {
+      "type": "belongsTo",
+      "model": "profile",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
