@@ -6,9 +6,9 @@
   "PostgresConnection": {
     "host": "localhost",
     "port": 5432,
-    "url": "postgres://postgres@localhost/tentara_pelajar",
+    "url": "postgres://postgres:postgres@localhost/tentara_pelajar",
     "database": "tentara_pelajar",
-    "password": "",
+    "password": "postgres",
     "name": "PostgresConnection",
     "user": "postgres",
     "connector": "postgresql"
