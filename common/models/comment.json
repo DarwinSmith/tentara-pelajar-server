@@ -32,6 +32,11 @@
       "type": "belongsTo",
       "model": "post",
       "foreignKey": "postId"
+    },
+    "profile": {
+      "type": "belongsTo",
+      "model": "profile",
+      "foreignKey": "profileId"
     }
   },
   "acls": [],
