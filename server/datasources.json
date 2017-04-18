@@ -4,13 +4,13 @@
     "connector": "memory"
   },
   "PostgresConnection": {
-    "host": "localhost",
+    "host": "aa1jzatyklrp4ji.caalrzekihhw.ap-southeast-1.rds.amazonaws.com",
     "port": 5432,
-    "url": "postgres://postgres:postgres@localhost/tentara_pelajar",
+    "url": "postgres://tentara:tentara_pelajar04@aa1jzatyklrp4ji.caalrzekihhw.ap-southeast-1.rds.amazonaws.com/tentara_pelajar",
     "database": "tentara_pelajar",
-    "password": "postgres",
+    "password": "tentara_pelajar04",
     "name": "PostgresConnection",
-    "user": "postgres",
+    "user": "tentara",
     "connector": "postgresql"
   },
   "neo4j": {
