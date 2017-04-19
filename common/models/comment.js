@@ -15,7 +15,8 @@ module.exports = function (Comment) {
         Notification.create({
           verb: `User profile ${comment.profileId} is comment on your post`,
           object: 'Post Comment',
-          userId: post.profileId
+          userId: comment.profileId,
+          profileId: post.profileId
         }, (err, res) => {
           if (err) console.log(err)
           else {

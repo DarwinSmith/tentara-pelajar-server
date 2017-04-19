@@ -14,7 +14,8 @@ module.exports = function(Reaction) {
         Notification.create({
           verb: `User profile ${reaction.profileId} is give reaction on your post`,
           object: 'Post Reaction',
-          userId: post.profileId
+          userId: reaction.profileId,
+          profileId: post.profileId
         }, (err, res) => {
           if (err) console.log(err)
           else {
