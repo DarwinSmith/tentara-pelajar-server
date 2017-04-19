@@ -1,5 +1,5 @@
 'use strict';
-const app = '../../server/server'
+const app = require('../../server/server')
 
 module.exports = function(Reaction) {
   Reaction.afterRemote('create', (ctx, reaction, next) => {

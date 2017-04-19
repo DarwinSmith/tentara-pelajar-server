@@ -7,13 +7,16 @@ module.exports = function (Friendrequest) {
     Notification.create({
       verb: `User ${FR.profileId} has send friend request`,
       object: 'Friend Request',
-      userId: FR.friendId
+      userId: FR.profileId,
+      profileId: FR.friendId
     })
     next()
   })
   Friendrequest.beforeRemote('**', (ctx, nuusedvar, next) => {
     let FR = ctx.args.data
+    console.log(ctx.method.name)
     if (ctx.method.name === 'replaceById') {
+      console.log('fireeee')
       let Notification = app.models.notification
       let Friend = app.models.friend
       Notification.create({
