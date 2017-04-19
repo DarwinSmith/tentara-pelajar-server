@@ -37,7 +37,6 @@ module.exports = function(Profile) {
       }, limit: 5
     })
     .then(profiles => {
-      console.log(profiles);
       cb(null, profiles)
     })
     .catch(err => {
@@ -81,6 +80,38 @@ module.exports = function(Profile) {
       })
       .catch(err => console.error(err))
   }
+
+ Profile.remoteMethod('getFriendSuggestions', {
+   accepts: {arg: 'id', type: 'number', required: true},
+   http: {path: '/:id/friend_suggestions', verb: 'get'},
+   returns: {arg: 'friend_suggestions', type: 'Array'},
+ })
+
+ Profile.getFriendSuggestions= (id, cb) => {
+   Profile.findById(id)
+     .then(profile => {
+       profile.friends({
+        fields: {
+          id: true
+        }
+       })
+         .then(friends => {
+            let friendListIds = friends 
+            Profile.find({
+              where: {
+               id: {nin: [id, ...friendListIds]}
+              }
+            })
+            .then(suggestions => {
+              cb(null, suggestions)
+            })
+            .catch(err => console.error(err.message))
+         })
+         .catch(err => console.error(err.message))
+
+     })
+     .catch(err => console.error(err.message))
+ }
 
  Profile.remoteMethod('getProfileContacts', {
    accepts: {arg: 'id', type: 'number', required: true},

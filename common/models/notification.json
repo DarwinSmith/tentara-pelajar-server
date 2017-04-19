@@ -13,8 +13,12 @@
     }
   },
   "properties": {
+    "friendRequestPayload": {
+      "type": "string"  
+    },
     "isRead": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "verb": {
       "type": "string",
