@@ -10,7 +10,7 @@
     "database": "tentara_pelajar",
     "password": "",
     "name": "PostgresConnection",
-    "user": "postgres",
+    "user": "hacktiv8",
     "connector": "postgresql"
   },
   "neo4j": {
