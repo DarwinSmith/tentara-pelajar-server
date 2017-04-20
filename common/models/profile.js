@@ -69,7 +69,7 @@ module.exports = function(Profile) {
                 profileId: {inq: friendsIds}
               },
               order: 'updatedAt DESC',
-              include: 'profile'
+              include: ['profile', 'postMedia']
             })
               .then(posts => {
                 cb(null, posts)
