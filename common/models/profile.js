@@ -81,6 +81,12 @@ module.exports = function(Profile) {
       .catch(err => console.error(err))
   }
 
+  Profile.remoteMethod('getTimelinesBySelf', {
+    accepts: {arg: 'id', type: 'number', required: true},
+    http: {path: '/:id/selftimelines', verb: 'get'},
+    returns: {arg: 'timelines', type: 'Array'},
+  });
+
  Profile.remoteMethod('getFriendSuggestions', {
    accepts: {arg: 'id', type: 'number', required: true},
    http: {path: '/:id/friend_suggestions', verb: 'get'},
@@ -96,7 +102,7 @@ module.exports = function(Profile) {
         }
        })
          .then(friends => {
-            let friendListIds = friends 
+            let friendListIds = friends
             Profile.find({
               where: {
                id: {nin: [id, ...friendListIds]}
