@@ -11,17 +11,21 @@ module.exports = function(Reaction) {
       }
       else {
         if (err) console.log(err)
-        Notification.create({
-          verb: `User profile ${reaction.profileId} is give reaction on your post`,
-          object: 'Post Reaction',
-          userId: reaction.profileId,
-          profileId: post.profileId
-        }, (err, res) => {
-          if (err) console.log(err)
-          else {
-            next()
-          }
-        })
+        let Profile = app.models.profile
+        Profile.findById(reaction.profileId)
+          .then(profile => {
+            Notification.create({
+              verb: `${profile.fullname} is give reaction on your post`,
+              object: 'Post Reaction',
+              userId: reaction.profileId,
+              profileId: post.profileId
+            }, (err, res) => {
+              if (err) console.log(err)
+              else {
+                next()
+              }
+            })
+          })
       }
     })
   })
