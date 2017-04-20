@@ -12,16 +12,22 @@ module.exports = function (Comment) {
       }
       else {
         if (err) console.log(err)
-        Notification.create({
-          verb: `User profile ${comment.profileId} is comment on your post`,
-          object: 'Post Comment',
-          userId: post.profileId
-        }, (err, res) => {
-          if (err) console.log(err)
-          else {
-            next()
-          }
-        })
+        app.models.profile.findById(comment.profileId)
+          .then(profile => {
+            Notification.create({
+              verb: `${profile.fullname} comments on your post`,
+              object: 'Post Comment',
+              userId: comment.profileId,
+              profileId: post.profileId
+            }, (err, res) => {
+              if (err) console.log(err)
+              else {
+                next()
+              }
+            })
+          })
+          .catch(err => console.error(err))
+
       }
     })
   })

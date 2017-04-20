@@ -5,7 +5,21 @@
   "options": {
     "validateUpsert": true
   },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    }
+  },
   "properties": {
+    "friendRequestPayload": {
+      "type": "string"  
+    },
+    "isRead": {
+      "type": "boolean",
+      "default": false
+    },
     "verb": {
       "type": "string",
       "required": true

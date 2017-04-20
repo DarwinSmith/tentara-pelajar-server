@@ -24,3 +24,4 @@ npm-debug.log
 !.elasticbeanstalk/*.global.yml
 
 server/datasources.json
+/server/datasources.json
