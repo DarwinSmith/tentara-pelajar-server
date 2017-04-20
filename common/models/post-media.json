@@ -1,5 +1,5 @@
 {
-  "name": "post",
+  "name": "post_media",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -13,36 +13,21 @@
     }
   },
   "properties": {
-    "profileId": {
+    "postId": {
       "type": "number",
       "required": true
     },
-    "content": {
+    "url": {
       "type": "string",
       "required": true
     }
   },
   "validations": [],
   "relations": {
-    "profile": {
+    "post": {
       "type": "belongsTo",
-      "model": "profile",
-      "foreignKey": "profileId"
-    },
-    "comments": {
-      "type": "hasMany",
-      "model": "comment",
-      "foreignKey": ""
-    },
-    "reactions": {
-      "type": "hasMany",
-      "model": "reaction",
-      "foreignKey": ""
-    },
-    "postMedia": {
-      "type": "hasMany",
-      "model": "post_media",
-      "foreignKey": ""
+      "model": "post",
+      "foreignKey": "postId"
     }
   },
   "acls": [],

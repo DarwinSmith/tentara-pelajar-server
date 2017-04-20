@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 'use strict';
 
 module.exports = function(Profile) {
@@ -102,7 +103,7 @@ module.exports = function(Profile) {
         }
        })
          .then(friends => {
-            let friendListIds = friends
+            let friendListIds = friends.map(friend => friend.id)
             Profile.find({
               where: {
                id: {nin: [id, ...friendListIds]}

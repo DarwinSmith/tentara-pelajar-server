@@ -99,5 +99,9 @@
   "skill_endorsement": {
     "dataSource": "PostgresConnection",
     "public": true
+  },
+  "post_media": {
+    "dataSource": "PostgresConnection",
+    "public": true
   }
 }

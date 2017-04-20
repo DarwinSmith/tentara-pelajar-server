@@ -32,6 +32,9 @@
     },
     "activity": {
       "type": "string"
+    },
+    "avatar": {
+      "type": "string"
     }
   },
   "validations": [],
@@ -80,7 +83,6 @@
       "model": "school",
       "foreignKey": "schoolId"
     }
-
   },
   "acls": [],
   "methods": {}
