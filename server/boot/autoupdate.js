@@ -29,7 +29,7 @@ module.exports = function(app) {
         });
     }
     //TODO: change to autoUpdateAll when ready for CI deployment to production
-    // autoMigrateAll();
-    autoUpdateAll();
+    autoMigrateAll();
+    // autoUpdateAll();
 
 };
