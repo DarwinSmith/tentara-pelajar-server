@@ -20,12 +20,17 @@
     "skill": {
       "type": "belongsTo",
       "model": "skill",
-      "foreignKey": ""
+      "foreignKey": "skillId"
     },
     "profile": {
       "type": "belongsTo",
       "model": "profile",
-      "foreignKey": ""
+      "foreignKey": "profileId"
+    },
+    "friend": {
+      "type": "belongsTo",
+      "model": "profile",
+      "foreignKey": "friendId"
     }
   },
   "acls": [],
