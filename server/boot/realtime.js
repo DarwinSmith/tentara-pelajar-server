@@ -13,6 +13,13 @@ module.exports = (app) => {
     if (err) console.log(err)
     changes.pipe(es.stringify()).pipe(process.stdout)
   })
+
+  const Post = app.models.post
+  Post.createChangeStream((err, changes) => {
+    if (err) console.error(err)
+    changes.pipe(es.stringify()).pipe(process.stdout)
+  })
+
 }
 
 // const es = require('event-stream')
